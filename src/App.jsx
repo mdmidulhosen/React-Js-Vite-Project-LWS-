@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import MyButton from './component/ClickBtn'
+import React from "react";
+import Index from "./Index";
 
 function App() {
-
   return (
     <>
-      <MyButton/>
+      <Index locale="en-us" />
+      <Index locale="bn-BD" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
