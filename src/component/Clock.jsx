@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class Index extends Component {
+export class Clock extends Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ export class Index extends Component {
   }
 }
 
-export default Index;
+export default Clock;

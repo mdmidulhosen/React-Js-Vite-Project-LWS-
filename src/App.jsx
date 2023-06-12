@@ -1,11 +1,12 @@
 import React from "react";
-import Index from "./Index";
+import Clock from "./component/Clock";
+import './App.css'
 
 function App() {
   return (
     <>
-      <Index locale="en-us" />
-      <Index locale="bn-BD" />
+      <Clock locale="en-us" />
+      <Clock locale="bn-BD" />
     </>
   );
 }
