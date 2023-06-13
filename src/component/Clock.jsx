@@ -21,11 +21,16 @@ export class Clock extends Component {
     clearInterval(this.clockClose)
   }
 
-  handleClick = () =>{
-    console.log("Clicked")
-    this.setState({
-      locale: "bn-BD"
-    })
+  handleClick = () => {
+    if (this.state.locale == "en-US") {
+      this.setState({
+        locale: "bn-BD"
+      });
+    } else {
+      this.setState({
+        locale: "en-US"
+      });
+    }
   }
 
   render() {
