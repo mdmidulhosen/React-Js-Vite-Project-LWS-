@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 
 export class Clock extends Component {
-  constructor(props){
-    super(props)
-    this.state = {date: new Date()}
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      this.clockClose =this.tick()
+    }, 1000);
+  };
+
+  tick(){
+    this.setState({ date: new Date() });
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.clockClose)
   }
 
   render() {
@@ -14,14 +28,7 @@ export class Clock extends Component {
         </span>
       </div>
     );
-  }
-
-  componentDidMount(){
-    setInterval(()=>{
-      this.setState({date: new Date()})
-    }, 1000)
-  }
-
+  };
 }
 
 export default Clock;
