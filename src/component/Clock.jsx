@@ -20,12 +20,19 @@ export class Clock extends Component {
     clearInterval(this.clockClose)
   }
 
+  handleClick = () =>{
+    this.setState({
+      locale: "bn-BD"
+    })
+  }
+
   render() {
     return (
       <div>
         <span className="text">
-          {this.state.date.toLocaleTimeString(this.props.locale)}
+          {this.state.date.toLocaleTimeString(this.state.locale)}
         </span>
+        <button type="button" onClick={this.handleClick}>Click Me</button>
       </div>
     );
   };

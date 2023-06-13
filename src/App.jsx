@@ -5,8 +5,8 @@ import './App.css'
 function App() {
   return (
     <>
-      <Clock locale="en-us" />
-      <Clock locale="bn-BD" />
+      <Clock locale="en-us"/>
+      {/* <Clock locale="bn-BD" /> */}
     </>
   );
 }
