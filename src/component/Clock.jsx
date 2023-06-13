@@ -5,33 +5,34 @@ export class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date() };
-  };
+  }
 
   componentDidMount() {
     setInterval(() => {
-      this.clockClose =this.tick()
+      this.clockClose = this.tick();
     }, 1000);
-  };
+  }
 
-  tick(){
+  tick() {
     this.setState({ date: new Date() });
   }
 
-  componentWillUnmount(){
-    clearInterval(this.clockClose)
+  componentWillUnmount() {
+    clearInterval(this.clockClose);
   }
 
   handleClick = () => {
-    if (this.state.locale == "en-US") {
+    console.log("Clicked");
+    if (this.state.locale == "bn-BD") {
       this.setState({
-        locale: "bn-BD"
+        locale: "en-US",
       });
     } else {
       this.setState({
-        locale: "en-US"
+        locale: "bn-BD",
       });
     }
-  }
+  };
 
   render() {
     return (
@@ -39,11 +40,10 @@ export class Clock extends Component {
         <span className="text">
           {this.state.date.toLocaleTimeString(this.state.locale)}
         </span>
-        <Button change={this.handleClick}/>
+        <Button change={this.handleClick} />
       </div>
     );
-  };
+  }
 }
 
 export default Clock;
-
