@@ -28,17 +28,26 @@ export class Clock extends Component {
       this.setState({
         locale: "en-US",
       });
-      let testIt = "lorem"
     } else {
       this.setState({
         locale: "bn-BD",
       });
-      let testIt = "ipsum"
     }
   };
 
   render() {
-    let testIt = "Click Here"
+    let testIt 
+
+    if (this.state.locale === "bn-BD") {
+    testIt = "ভাষা পরিবর্তন করুন";
+    // console.log(testIt);
+  } else if(this.state.locale === "en-US") {
+    testIt = "Change the language";
+    // console.log(testIt);
+  }else{
+    testIt = "Click Here";
+  }
+
     return (
       <div>
         <span className="text">

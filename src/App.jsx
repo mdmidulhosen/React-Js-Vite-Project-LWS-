@@ -1,12 +1,12 @@
 import React from "react";
-import Clock from "./component/Clock";
+import ClockList from "./component/ClockList";
 import './App.css'
 
 function App() {
+  const quantities = [1, 2, 3]
   return (
     <>
-      <Clock locale="en-us"/>
-      {/* <Clock locale="bn-BD" /> */}
+      <ClockList quantities={quantities}/>
     </>
   );
 }
