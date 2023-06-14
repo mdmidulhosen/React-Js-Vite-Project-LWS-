@@ -6,40 +6,60 @@ export class Form extends Component {
     state = {
         title: "Mridul",
         text: "This is my text",
-        library: "vue"
+        library: "vue",
+        checkBox: true
     }
 
     handlerChange = (e) => {
-        if(e.target.type === "text"){
+        if (e.target.type === "text") {
             this.setState({
                 title: e.target.value
             })
-        }else if(e.target.type === "textarea"){
+        } else if (e.target.type === "textarea") {
             this.setState({
                 text: e.target.value
             })
-        }else if(e.target.type === "select-one"){
+        } else if (e.target.type === "select-one") {
             this.setState({
                 library: e.target.value
             })
-        }else{
+        } else if (e.target.type === "checkbox") {
+            this.setState({
+                checkBox: e.target.checked
+            })
+        } else {
+            console.log(e.target.type === "select-one")
             console.log("Nothing Is Here")
         }
     }
 
+    submitHandler = (e) => {
+        const { title, text, library, checkBox } = this.state;
+        e.preventDefault();
+        console.log(title, text, library, checkBox)
+    }
+
     render() {
-        const { title, text, library } = this.state;
+        const { title, text, library, checkBox } = this.state;
         return (
-            <div>
+            <form  onSubmit={this.submitHandler}>
                 <input type="text" value={title} onChange={this.handlerChange} />
                 <br></br>
                 <br></br>
-                <textarea  name="textarea" value={text} onChange={this.handlerChange}></textarea>
+                <textarea name="textarea" value={text} onChange={this.handlerChange}></textarea>
+                <br></br>
+                <br></br>
                 <select value={library} onChange={this.handlerChange}>
                     <option value="react">React</option>
                     <option value="vue">Vue</option>
                 </select>
-            </div>
+                <br></br>
+                <br></br>
+                <input type="checkbox" value={checkBox} onChange={this.handlerChange} />
+                <br></br>
+                <br></br>
+                <input type="submit" value={"Submit"}/>
+            </form>
         )
     }
 }
