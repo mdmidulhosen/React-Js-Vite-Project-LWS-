@@ -14,11 +14,11 @@ export class Button extends Component {
   }
 
   render() {
-    const { change } = this.props;
+    const { change, tryIt } = this.props;
     return (
       <div>
         <button type="button" onClick={change}>
-          Click Me
+          {tryIt}
         </button>
       </div>
     );
