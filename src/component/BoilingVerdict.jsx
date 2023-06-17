@@ -5,7 +5,7 @@ import TemperatureInput from './temperatureInput'
 //   // if(TemperatureInput)
 // }
 
-function BoilingVerdict({celcius = 0, myCelsius, myFahrenheit}) {
+function BoilingVerdict({myCelsius, myFahrenheit}) {
       if (myCelsius >= 100) {
         return <h4>Water would boil</h4>
       }else if(myFahrenheit >= 212){

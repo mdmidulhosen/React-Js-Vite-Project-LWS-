@@ -18,7 +18,7 @@ export class Button extends Component {
     return (
       <div>
         <button type="button" onClick={change}>
-          {tryIt}
+        {tryIt}
         </button>
       </div>
     );

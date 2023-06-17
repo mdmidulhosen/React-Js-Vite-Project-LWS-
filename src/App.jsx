@@ -3,12 +3,18 @@ import React from "react";
 import './App.css'
 // import Form from "./component/Form";
 import Calculator from "./component/Calculator";
+import ClickCounter from "./component/ClickCounter";
+import HovwerCounter from "./component/HoverCounter";
+import Clock from "./component/Clock";
 
 function App() {
-  const quantities = [1, 2, 3]
   return (
     <>
-    <Calculator/>
+    <Clock/>
+      {/* <div className="app">
+        <ClickCounter />
+        <HovwerCounter />
+      </div> */}
     </>
   );
 }

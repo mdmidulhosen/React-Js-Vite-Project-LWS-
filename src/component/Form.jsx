@@ -28,7 +28,6 @@ export class Form extends Component {
                 checkBox: e.target.checked
             })
         } else {
-            console.log(e.target.type === "select-one")
             console.log("Nothing Is Here")
         }
     }
@@ -36,7 +35,6 @@ export class Form extends Component {
     submitHandler = (e) => {
         const { title, text, library, checkBox } = this.state;
         e.preventDefault();
-        console.log(title, text, library, checkBox)
     }
 
     render() {

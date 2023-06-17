@@ -40,10 +40,10 @@ export class Clock extends Component {
 
     if (this.state.locale === "bn-BD") {
     testIt = "ভাষা পরিবর্তন করুন";
-    // console.log(testIt);
+    console.log(testIt);
   } else if(this.state.locale === "en-US") {
     testIt = "Change the language";
-    // console.log(testIt);
+    console.log(testIt);
   }else{
     testIt = "Click Here";
   }
