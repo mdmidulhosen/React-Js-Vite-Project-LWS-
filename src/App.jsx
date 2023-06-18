@@ -6,15 +6,16 @@ import Calculator from "./component/Calculator";
 import ClickCounter from "./component/ClickCounter";
 import HovwerCounter from "./component/HoverCounter";
 import Clock from "./component/Clock";
+import User from "./component/HOC/User";
 
 function App() {
   return (
     <>
-    <Clock/>
-      {/* <div className="app">
+      <div className="app">
         <ClickCounter />
         <HovwerCounter />
-      </div> */}
+        <User name={(issLoggedIn)=>(issLoggedIn ? "Mridul" : "Guest")}/>
+      </div>
     </>
   );
 }
