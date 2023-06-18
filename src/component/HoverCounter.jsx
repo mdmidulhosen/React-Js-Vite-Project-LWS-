@@ -5,9 +5,8 @@ import React, { Component } from "react";
 
 
 export function HoverCounter ({count, increamentCount, theme}) {
-    console.log(theme)
     
-    const style = theme ===  "dark" ? {backgroundColor:"red", color:"white"} : console.log("Nothing");
+    const style = theme ===  "dark" ? {backgroundColor:"red", color:"white"} : null;
         return (
             <div>
                 <h1 style={style}  onMouseOver={increamentCount}>

@@ -9,6 +9,7 @@ import Clock from "./component/Clock";
 import User from "./component/HOC/User";
 import Counter from "./component/Counter";
 import Section from "./component/Section";
+import ThemeContext from "./context/ThemeContext";
 
 export default class App extends Component {
   state = {
@@ -26,7 +27,7 @@ export default class App extends Component {
             <ClickCounter count={count} increamentCount={increamentCount} />
           )} />
   
-          <Section theme={theme} />
+          <ThemeContext.Provider value={{theme: theme}}><Section /></ThemeContext.Provider>
   
         </div>
       </>
