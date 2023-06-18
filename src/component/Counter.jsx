@@ -11,11 +11,11 @@ export class Counter extends Component {
     }
 
   render() {
-    const {renderProps} = this.props;
+    const {renderprops} = this.props;
     const {count} = this.state;
 
     return (
-      renderProps(count, this.increamentCount)
+      renderprops(count, this.increamentCount)
     )
   }
 }

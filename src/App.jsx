@@ -9,26 +9,41 @@ import Clock from "./component/Clock";
 import User from "./component/HOC/User";
 import Counter from "./component/Counter";
 import Section from "./component/Section";
-import ThemeContext from "./context/ThemeContext";
+import themeContext from "./context/themeContext";
 
 export default class App extends Component {
   state = {
     theme: "dark"
   }
-  render(){
-    const {theme} = this.state
+
+  changeTheme = () => {
+    this.setState(({ theme }) => {
+      if (theme === "dark") {
+        return {
+          theme: "light"
+        }
+      } else {
+        return {
+          theme: "dark"
+        }
+      }
+    })
+  }
+
+  render() {
+    const { theme } = this.state
     return (
       <>
         <div className="app">
           {/* <ClickCounter />
           <HovwerCounter /> */}
-  
-          <Counter renderProps={(count, increamentCount) => (
+
+          <Counter renderprops={(count, increamentCount) => (
             <ClickCounter count={count} increamentCount={increamentCount} />
           )} />
-  
-          <ThemeContext.Provider value={{theme: theme}}><Section /></ThemeContext.Provider>
-  
+
+          <themeContext.Provider value={{ theme: theme, changeTheme: this.changeTheme }}><Section /></themeContext.Provider>
+
         </div>
       </>
     );
