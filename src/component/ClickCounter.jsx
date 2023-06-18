@@ -6,21 +6,14 @@ import React, { Component } from "react";
 
 export class ClickCounter extends Component {
 
-    state = {
-        count: 0,
-    }
-    increamentCount = () => {
-        this.setState((pervState) => ({
-            count: pervState.count + 1
-        }))
-    }
+    
     
     // const {count, increamentCount} = props
     render(){
-    const { count } = this.state;
+    const { count, increamentCount } = this.props;
         return (
             <div>
-                <button type="button" onClick={this.increamentCount}>
+                <button type="button" onClick={increamentCount}>
                     Clicked {count} Times
                 </button>
             </div>
