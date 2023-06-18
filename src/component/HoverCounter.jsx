@@ -4,19 +4,17 @@ import React, { Component } from "react";
 
 
 
-export class HoverCounter extends Component {
-    // const {count, increamentCount} = props
+export function HoverCounter ({count, increamentCount, theme}) {
+    console.log(theme)
     
-    render(){
-    const { count, increamentCount } = this.props;
+    const style = theme ===  "dark" ? {backgroundColor:"red", color:"white"} : console.log("Nothing");
         return (
             <div>
-                <h1 onMouseOver={increamentCount}>
+                <h1 style={style}  onMouseOver={increamentCount}>
                     Hover {count} Times
                 </h1>
             </div>
         )
-    }
 
 
 }
