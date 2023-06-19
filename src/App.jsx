@@ -10,6 +10,7 @@ import User from "./component/HOC/User";
 import Counter from "./component/Counter";
 import Section from "./component/Section";
 import themeContext from "./context/themeContext";
+import Todo from "./component/Todo";
 
 export default class App extends Component {
   state = {
@@ -35,14 +36,17 @@ export default class App extends Component {
     return (
       <>
         <div className="app">
+
+          <Todo />
+
           {/* <ClickCounter />
           <HovwerCounter /> */}
 
-          <Counter renderprops={(count, increamentCount) => (
+          {/* <Counter renderprops={(count, increamentCount) => (
             <ClickCounter count={count} increamentCount={increamentCount} />
           )} />
 
-          <themeContext.Provider value={{ theme: theme, changeTheme: this.changeTheme }}><Section /></themeContext.Provider>
+          <themeContext.Provider value={{ theme: theme, changeTheme: this.changeTheme }}><Section /></themeContext.Provider> */}
 
         </div>
       </>
