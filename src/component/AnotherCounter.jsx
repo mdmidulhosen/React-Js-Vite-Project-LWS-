@@ -6,7 +6,7 @@ function AnotherCounter() {
     <div>
       {count}
       <p>
-        <button type='button' onClick={()=>{setCount(count + 1)}}>Icreament 1</button>
+        <button onClick={()=>setCount((prevState)=> prevState + 1)}>Icreament 1</button>
       </p>
     </div>
   )
