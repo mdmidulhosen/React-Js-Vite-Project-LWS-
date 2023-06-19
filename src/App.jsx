@@ -11,6 +11,7 @@ import Counter from "./component/Counter";
 import Section from "./component/Section";
 import themeContext from "./context/themeContext";
 import Todo from "./component/Todo";
+import AnotherCounter from "./component/AnotherCounter";
 
 export default class App extends Component {
   state = {
@@ -37,7 +38,7 @@ export default class App extends Component {
       <>
         <div className="app">
 
-          <Todo />
+          <AnotherCounter />
 
           {/* <ClickCounter />
           <HovwerCounter /> */}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Todo() {
 
     const [todo, setTodo] = useState("");
-    const [warning, setWarning] = useState("");
+    const [warning, setWarning] = useState(null);
 
     const handleInput = (e) => {
         const inputValue = e.target.value;
