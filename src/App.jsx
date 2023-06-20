@@ -12,6 +12,8 @@ import Section from "./component/Section";
 import themeContext from "./context/themeContext";
 import Todo from "./component/Todo";
 import AnotherCounter from "./component/AnotherCounter";
+import UseEffectClass from "./component/UseEffectClass";
+import UseEffectFunction from "./component/UseEffectFunction";
 
 export default class App extends Component {
   state = {
@@ -38,7 +40,7 @@ export default class App extends Component {
       <>
         <div className="app">
 
-          <AnotherCounter />
+          <UseEffectFunction />
 
           {/* <ClickCounter />
           <HovwerCounter /> */}
