@@ -1,59 +1,58 @@
-import React, { Component } from "react";
+import React, { Component, useCallback, useMemo, useState } from "react";
 // import ClockList from "./component/ClockList";
 import './App.css'
-// import Form from "./component/Form";
-import Calculator from "./component/Calculator";
-import ClickCounter from "./component/ClickCounter";
-import HovwerCounter, { HoverCounter } from "./component/HoverCounter";
-import Clock from "./component/Clock";
-import User from "./component/HOC/User";
-import Counter from "./component/Counter";
-import Section from "./component/Section";
-import themeContext from "./context/themeContext";
-import Todo from "./component/Todo";
-import AnotherCounter from "./component/AnotherCounter";
-import UseEffectClass from "./component/UseEffectClass";
-import UseEffectFunction from "./component/UseEffectFunction";
+import Title from "./component/Title";
+import ShowCount from "./component/ShowCount";
+import HookButton from "./component/HookButton";
+// // import Form from "./component/Form";
+// import Calculator from "./component/Calculator";
+// import ClickCounter from "./component/ClickCounter";
+// import HovwerCounter, { HoverCounter } from "./component/HoverCounter";
+// import Clock from "./component/Clock";
+// import User from "./component/HOC/User";
+// import Counter from "./component/Counter";
+// import Section from "./component/Section";
+// import themeContext from "./context/themeContext";
+// import Todo from "./component/Todo";
+// import AnotherCounter from "./component/AnotherCounter";
+// import UseEffectClass from "./component/UseEffectClass";
+// import UseEffectFunction from "./component/UseEffectFunction";
 
-export default class App extends Component {
-  state = {
-    theme: "dark"
-  }
+export default function App() {
 
-  changeTheme = () => {
-    this.setState(({ theme }) => {
-      if (theme === "dark") {
-        return {
-          theme: "light"
-        }
-      } else {
-        return {
-          theme: "dark"
-        }
-      }
-    })
-  }
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
 
-  render() {
-    const { theme } = this.state
-    return (
-      <>
-        <div className="app">
+  const increamentByOne = useCallback(() => {
+    setCount1((prevCount) => prevCount + 1)
+  }, [])
 
-          <UseEffectFunction />
+  const increamentByFive = useCallback(() => {
+    setCount2((prevCount) => prevCount + 5)
+  }, [])
 
-          {/* <ClickCounter />
-          <HovwerCounter /> */}
+  const isEvenOrOdd = useMemo(() => {
+    let i = 0
+    while (i < 1000000000) i += 1;
+    return count1 % 2 === 0;
+  }, [count1])
 
-          {/* <Counter renderprops={(count, increamentCount) => (
-            <ClickCounter count={count} increamentCount={increamentCount} />
-          )} />
+  return (
+    <>
+      <div className="app">
 
-          <themeContext.Provider value={{ theme: theme, changeTheme: this.changeTheme }}><Section /></themeContext.Provider> */}
+        <Title />
+        <ShowCount count={count1} title={"Counter 1"} />
+        <p>
+          {isEvenOrOdd ? "Even" : "Odd"}
+        </p>
+        <HookButton handleClick={increamentByOne}>Increament By One</HookButton>
+        <hr />
+        <ShowCount count={count2} title={"Counter 2"} />
+        <HookButton handleClick={increamentByFive}>Increament By Five</HookButton>
 
-        </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
 

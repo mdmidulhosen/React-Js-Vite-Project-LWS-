@@ -6,14 +6,13 @@ export default function UseEffectFunction() {
     const [ date, setDate] = useState(new Date());
 
     useEffect(()=>{
-        console.log("component render")
         document.title = `Clicked ${count} Times`
     }, [count])
 
     useEffect(()=>{
         const interval = setInterval(tick, 1000)
         return ()=>{
-            clearInterval(interval)
+            clearInterval(interval);
         }
     })
 
