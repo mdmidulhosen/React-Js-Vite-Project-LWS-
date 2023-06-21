@@ -6,7 +6,8 @@ function Form() {
 const inputRef = useRef(null)
 
 useEffect(()=>{
-    inputRef.current.focus()
+    const hello = "Hey There";
+    inputRef.current.value = hello;
 }, [])
 
   return (
