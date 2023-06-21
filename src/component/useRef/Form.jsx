@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Input from './Input';
 
 function Form() {
 
@@ -10,7 +11,7 @@ useEffect(()=>{
 
   return (
     <div>
-      <input type="text" ref={inputRef} placeholder='Write Something Here' />
+      <Input type={"text"} placeholder={'Write Something Here'} ref={inputRef}/>
     </div>
   )
 }
