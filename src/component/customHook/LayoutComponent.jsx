@@ -1,8 +1,8 @@
 import useScreenWidth from "./useScreenWidth"
 
 function LayoutComponent() {
-
-    const onSmallScreen = useScreenWidth()
+    
+    const onSmallScreen = useScreenWidth(600)
 
     return (
         <div>
